@@ -32,7 +32,7 @@ public class Android15 extends Boss {
         TaskService.gI().checkDoneTaskKillBoss(pl, this);
     }
 
-    @Override
+//    @Override
     public void idle() {
     }
 

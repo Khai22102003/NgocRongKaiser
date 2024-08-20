@@ -36,10 +36,9 @@ public class Android20 extends Boss {
         generalRewards(pl);
     }
 
-    @Override
-    public void idle() {
-
-    }
+    // @Override
+     public void idle() {
+     }
 
     @Override
     public void checkPlayerDie(Player pl) {

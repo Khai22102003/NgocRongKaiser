@@ -72,7 +72,7 @@ public class SieuBoHung extends FutureBoss {
         ServerNotify.gI().notify("Boss " + this.name + " vừa xuất hiện tại " + this.zone.map.mapName);
     }
 
-    @Override
+//    @Override
     public void idle() {
     }
 

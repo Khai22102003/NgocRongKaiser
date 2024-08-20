@@ -84,9 +84,8 @@ public class XenCon extends FutureBoss {
         }
     }
 
-    @Override
+//    @Override
     public void idle() {
-
     }
 
     @Override

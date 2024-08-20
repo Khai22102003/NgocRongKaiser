@@ -67,7 +67,7 @@ public class XenBoHung2 extends FutureBoss {
         }
     }
 
-    @Override
+//    @Override
     public void idle() {
 
     }

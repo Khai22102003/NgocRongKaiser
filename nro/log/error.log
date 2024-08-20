@@ -14453,3 +14453,43 @@ java.lang.NullPointerException: Cannot read field "map" because "this.zone" is n
 [2024-08-20 13:18:45 DEBUG Log:28] Load clan thành công (108), clan next id: 153
 [2024-08-20 13:18:45 DEBUG Log:20] Tổng thời gian load database: 1749(ms)
 [2024-08-20 13:18:45 DEBUG Log:20] Start server......... Current thread: 221
+[2024-08-20 14:58:53 DEBUG Log:28] Load part thành công (1473)
+[2024-08-20 14:58:53 DEBUG Log:28] Load map template thành công (164)
+[2024-08-20 14:58:53 DEBUG Log:28] Load skill thành công (3)
+[2024-08-20 14:58:53 DEBUG Log:28] Load head avatar thành công (374)
+[2024-08-20 14:58:53 DEBUG Log:28] Load flag bag thành công (106)
+[2024-08-20 14:58:53 DEBUG Log:28] Load cải trang thành công (351)
+[2024-08-20 14:58:53 DEBUG Log:28] Load intrinsic thành công (26)
+[2024-08-20 14:58:53 DEBUG Log:28] Load task thành công (33)
+[2024-08-20 14:58:53 DEBUG Log:28] Load side task thành công (59)
+[2024-08-20 14:58:53 DEBUG Log:28] Load map item template thành công (2115)
+[2024-08-20 14:58:53 DEBUG Log:28] Load map item option template thành công (249)
+[2024-08-20 14:58:53 DEBUG Log:28] Load shop thành công (23)
+[2024-08-20 14:58:53 DEBUG Log:28] Load reward lucky round thành công! 111.20999999999998
+[2024-08-20 14:58:53 DEBUG Log:28] Load reward lucky round thành công (87)
+[2024-08-20 14:58:53 DEBUG Log:28] Load mob template thành công (84)
+[2024-08-20 14:58:53 DEBUG Log:28] Load npc template thành công (79)
+[2024-08-20 14:58:53 DEBUG Log:28] Thông báo tải dữ liệu images by name thành công (121)
+[2024-08-20 14:58:53 DEBUG Log:28] Load clan thành công (108), clan next id: 153
+[2024-08-20 14:58:53 DEBUG Log:20] Tổng thời gian load database: 1073(ms)
+[2024-08-20 14:58:54 DEBUG Log:20] Start server......... Current thread: 219
+[2024-08-20 14:59:16 DEBUG Log:28] Load part thành công (1473)
+[2024-08-20 14:59:16 DEBUG Log:28] Load map template thành công (164)
+[2024-08-20 14:59:16 DEBUG Log:28] Load skill thành công (3)
+[2024-08-20 14:59:16 DEBUG Log:28] Load head avatar thành công (374)
+[2024-08-20 14:59:16 DEBUG Log:28] Load flag bag thành công (106)
+[2024-08-20 14:59:16 DEBUG Log:28] Load cải trang thành công (351)
+[2024-08-20 14:59:16 DEBUG Log:28] Load intrinsic thành công (26)
+[2024-08-20 14:59:16 DEBUG Log:28] Load task thành công (33)
+[2024-08-20 14:59:16 DEBUG Log:28] Load side task thành công (59)
+[2024-08-20 14:59:16 DEBUG Log:28] Load map item template thành công (2115)
+[2024-08-20 14:59:16 DEBUG Log:28] Load map item option template thành công (249)
+[2024-08-20 14:59:17 DEBUG Log:28] Load shop thành công (23)
+[2024-08-20 14:59:17 DEBUG Log:28] Load reward lucky round thành công! 111.20999999999998
+[2024-08-20 14:59:17 DEBUG Log:28] Load reward lucky round thành công (87)
+[2024-08-20 14:59:17 DEBUG Log:28] Load mob template thành công (84)
+[2024-08-20 14:59:17 DEBUG Log:28] Load npc template thành công (79)
+[2024-08-20 14:59:17 DEBUG Log:28] Thông báo tải dữ liệu images by name thành công (121)
+[2024-08-20 14:59:17 DEBUG Log:28] Load clan thành công (108), clan next id: 153
+[2024-08-20 14:59:17 DEBUG Log:20] Tổng thời gian load database: 1093(ms)
+[2024-08-20 14:59:17 DEBUG Log:20] Start server......... Current thread: 228

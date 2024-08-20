@@ -31,9 +31,8 @@ public class FideDaiCa1 extends FutureBoss {
         generalRewards(pl);
     }
 
-    @Override
+//    @Override
     public void idle() {
-
     }
 
     @Override

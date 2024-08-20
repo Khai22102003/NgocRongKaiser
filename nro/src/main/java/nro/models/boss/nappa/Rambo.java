@@ -51,7 +51,7 @@ public class Rambo extends FutureBoss {
         generalRewards(pl);
     }
 
-    @Override
+//    @Override
     public void idle() {
 
     }

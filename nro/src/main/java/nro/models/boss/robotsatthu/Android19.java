@@ -43,9 +43,8 @@ public class Android19 extends Boss {
         generalRewards(pl);
     }
 
-    @Override
+//    @Override
     public void idle() {
-
     }
 
     @Override

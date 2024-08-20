@@ -33,10 +33,9 @@ public class TieuDoiTruong extends FutureBoss {
         generalRewards(pl);
     }
 
-    @Override
-    public void idle() {
-
-    }
+    // @Override
+     public void idle() {
+     }
 
     @Override
     public void checkPlayerDie(Player pl) {

@@ -50,7 +50,7 @@ public class MapDauDinh extends FutureBoss {
         generalRewards(pl);
     }
 
-    @Override
+//    @Override
     public void idle() {
 
     }

@@ -38,7 +38,7 @@ public class Android13 extends Boss {
         TaskService.gI().checkDoneTaskKillBoss(pl, this);
     }
 
-    @Override
+//    @Override
     public void idle() {
     }
 

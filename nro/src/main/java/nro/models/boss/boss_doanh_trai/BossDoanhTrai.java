@@ -68,10 +68,9 @@ public abstract class BossDoanhTrai extends Boss {
         }
     }
 
-    @Override
-    public void idle() {
-
-    }
+    // @Override
+     public void idle() {
+     }
 
     @Override
     public void checkPlayerDie(Player pl) {

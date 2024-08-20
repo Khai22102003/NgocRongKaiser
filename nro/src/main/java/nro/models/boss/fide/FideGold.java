@@ -60,9 +60,8 @@ public class FideGold extends Boss {
         generalRewards(pl);
     }
 
-    @Override
+//    @Override
     public void idle() {
-
     }
 
     @Override

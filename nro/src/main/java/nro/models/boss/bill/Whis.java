@@ -84,10 +84,9 @@ public class Whis extends Boss {
         generalRewards(pl);
     }
 
-    @Override
-    public void idle() {
-
-    }
+    // @Override
+     public void idle() {
+     }
 
     @Override
     public void leaveMap() {

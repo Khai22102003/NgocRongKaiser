@@ -29,9 +29,9 @@ public class Poc extends Boss {
         generalRewards(pl);
     }
 
-    @Override
-    public void idle() {
-    }
+    // @Override
+     public void idle() {
+     }
 
     @Override
     public void checkPlayerDie(Player pl) {
