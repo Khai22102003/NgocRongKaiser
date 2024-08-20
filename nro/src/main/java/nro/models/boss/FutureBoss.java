@@ -30,27 +30,6 @@ public abstract class FutureBoss extends Boss {
             return 0; // Nếu không có người tấn công, trả về 0 sát thương
         }
     }
-    
-    @Override
-    public int injured1(Player plAtt, int damage, boolean piercing, boolean isMobAttack) {
-        if (plAtt != null) {
-            // Kiểm tra kỹ năng của người chơi và giảm sát thương 20% cho các kỹ năng cụ thể
-            switch (plAtt.playerSkill.skillSelect.template.id) {
-                case Skill.TU_SAT:
-                case Skill.QUA_CAU_KENH_KHI:
-                case Skill.MAKANKOSAPPO:
-                    damage = (damage * 80) / 100; // Giảm sát thương 20% cho các kỹ năng cụ thể
-                    break;
-                // Không áp dụng giảm cho các kỹ năng khác
-                default:
-                    break;
-            }
-            // Gọi phương thức xử lý sát thương của Boss với sát thương đã điều chỉnh
-            return super.injured(plAtt, damage, piercing, isMobAttack);
-        } else {
-            return 0; // Nếu không có người tấn công, trả về 0 sát thương
-        }
-    }
 
     // Phương thức để ẩn NPC khỏi người chơi
     public void hide_npc(Player player, int idnpc, int action) {
