@@ -199,26 +199,27 @@ public class NpcFactory {
                                     if (player.iDMark.isBaseMenu()) {
                                         switch (select) {
                                             case 0:
-
-                                                if (!Manager.gI().getGameConfig().isOpenPrisonPlanet()) {
-                                                    Service.getInstance().sendThongBao(player,
-                                                            "Lối vào ngũ hành sơn chưa mở");
-                                                    return;
-                                                }
-
-                                                Zone zone = MapService.gI().getZoneJoinByMapIdAndZoneId(player, 122, 0);
-                                                if (zone != null) {
-                                                    player.location.x = 100;
-                                                    player.location.y = 384;
-                                                    MapService.gI().goToMap(player, zone);
-                                                    Service.getInstance().clearMap(player);
-                                                    zone.mapInfo(player);
-                                                    player.zone.loadAnotherToMe(player);
-                                                    player.zone.load_Me_To_Another(player);
-                                                }
-                                                // Service.getInstance().sendThongBao(player, "Lối vào ngũ hành sơn chưa
-                                                // mở");
-                                                break;
+                                                Service.getInstance().sendThongBao(player,
+                                                        "NGŨ HÀNH SƠN ĐANG TRÙNG TU, KHỈ NGỦ HẾT RỒI");
+//                                                if (!Manager.gI().getGameConfig().isOpenPrisonPlanet()) {
+//                                                    Service.getInstance().sendThongBao(player,
+//                                                            "Lối vào ngũ hành sơn chưa mở");
+//                                                    return;
+//                                                }
+//
+//                                                Zone zone = MapService.gI().getZoneJoinByMapIdAndZoneId(player, 122, 0);
+//                                                if (zone != null) {
+//                                                    player.location.x = 100;
+//                                                    player.location.y = 384;
+//                                                    MapService.gI().goToMap(player, zone);
+//                                                    Service.getInstance().clearMap(player);
+//                                                    zone.mapInfo(player);
+//                                                    player.zone.loadAnotherToMe(player);
+//                                                    player.zone.load_Me_To_Another(player);
+//                                                }
+//                                                // Service.getInstance().sendThongBao(player, "Lối vào ngũ hành sơn chưa
+//                                                // mở");
+//                                                break;
                                         }
                                     }
                                 }
@@ -1327,17 +1328,14 @@ public class NpcFactory {
                                             Input.gI().createFormChangePassword(player);
                                             break;
                                         case 5:
-
                                             if (player.pet == null) {
                                                 PetService.gI().createNormalPet(player);
                                                 Service.getInstance().sendThongBao(player,
                                                         "Con vừa nhận được đệ tử! Hãy chăm sóc nó nhé");
                                                 Service.gI().sendThongBaoFromAdmin(player,
                                                         "|7|Chúc Mừng Bạn Đã Nhận Được Đệ Tử!");
-                                                
                                             } else {
                                                 this.npcChat(player, "Đã có đệ tử rồi mà!");
-
                                             }
                                             break;
                                     }
@@ -3080,13 +3078,8 @@ public class NpcFactory {
                                                 case 4:// Vòng quay may mắn
                                                     this.createOtherMenu(player, ConstNpc.MENU_CHOOSE_LUCKY_ROUND,
                                                             "Con có thể chọn từ 1 đến 7 viên\n"
-                                                            + "giá mỗi viên là 5k hồng ngọc.\n"
-                                                            + "Ưu tiên dùng vé quay trước.", "Rương",
-                                                            "Rương phụ\nĐang có "
-                                                            + (player.inventory.itemsBoxCrackBall.size()
-                                                            - InventoryService.gI().getCountEmptyListItem(
-                                                                    player.inventory.itemsBoxCrackBall))
-                                                            + "\nmón", "Đóng");
+                                                            + "giá mỗi viên là 5000 hồng ngọc.\n"
+                                                            + "Ưu tiên dùng vé quay trước.", "Đóng");
                                                     break;
                                             }
                                             break;
@@ -3123,12 +3116,7 @@ public class NpcFactory {
                                                     this.createOtherMenu(player, ConstNpc.MENU_CHOOSE_LUCKY_ROUND,
                                                             "Con có thể chọn từ 1 đến 7 viên\n"
                                                             + "giá mỗi viên là 4 ngọc hoặc 5 triệu vàng.\n"
-                                                            + "Ưu tiên dùng vé quay trước.", "Vòng quay\nHồng ngọc", "Rương",
-                                                            "Rương phụ\nĐang có "
-                                                            + (player.inventory.itemsBoxCrackBall.size()
-                                                            - InventoryService.gI().getCountEmptyListItem(
-                                                                    player.inventory.itemsBoxCrackBall))
-                                                            + "\nmón", "Đóng");
+                                                            + "Ưu tiên dùng vé quay trước.", "Vòng quay\nHồng ngọc", "Rương", "Đóng");
                                                     break;
                                             }
                                             break;
@@ -3161,12 +3149,7 @@ public class NpcFactory {
                                                     this.createOtherMenu(player, ConstNpc.MENU_CHOOSE_LUCKY_ROUND,
                                                             "Con có thể chọn từ 1 đến 7 viên\n"
                                                             + "giá mỗi viên là 4 ngọc hoặc 5 triệu vàng.\n"
-                                                            + "Ưu tiên dùng vé quay trước.", "Vòng quay\nVàng", "Rương",
-                                                            "Rương phụ\nĐang có "
-                                                            + (player.inventory.itemsBoxCrackBall.size()
-                                                            - InventoryService.gI().getCountEmptyListItem(
-                                                                    player.inventory.itemsBoxCrackBall))
-                                                            + "\nmón", "Đóng");
+                                                            + "Ưu tiên dùng vé quay trước.", "Vòng quay\nVàng", "Rương", "Đóng");
                                                     break;
                                             }
                                             break;
@@ -6133,10 +6116,10 @@ public class NpcFactory {
                                 break;
                             case 1:
                                 Boss so4 = BossFactory.createBoss(BossFactory.SO4);
-//                                Boss so3 = BossFactory.createBoss(BossFactory.SO3);
-//                                Boss so2 = BossFactory.createBoss(BossFactory.SO2);
-//                                Boss so1 = BossFactory.createBoss(BossFactory.SO1);
-//                                Boss tieuDoiTruong = BossFactory.createBoss(BossFactory.TIEU_DOI_TRUONG);
+                               Boss so3 = BossFactory.createBoss(BossFactory.SO3);
+                               Boss so2 = BossFactory.createBoss(BossFactory.SO2);
+                               Boss so1 = BossFactory.createBoss(BossFactory.SO1);
+                               Boss tieuDoiTruong = BossFactory.createBoss(BossFactory.TIEU_DOI_TRUONG);
                             case 2:
                                 BossFactory.createBoss(BossFactory.KUKU);
                                 BossFactory.createBoss(BossFactory.MAP_DAU_DINH);
