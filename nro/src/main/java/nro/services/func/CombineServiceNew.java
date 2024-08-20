@@ -834,14 +834,19 @@ public class CombineServiceNew {
                             }
                         }
                     }
-                    if (levelTrangBi >= 10) {
-                        Service.getInstance().sendThongBaoOK(player, "SKH đã đạt level tối đa");
+                    if (levelTrangBi >= 7) {
+                        Service.getInstance().sendThongBaoOK(player, isItemSKH + " đã đạt level tối đa");
                         return;
+                    }
+                    int[] tiLeNangCap = {100, 75, 50, 25, 10, 5, 1}; // Lưu trữ tỷ lệ nâng cấp
+                    int tlnc = 0;
+                    if (levelTrangBi >= 1 && levelTrangBi <= 7) {
+                        tlnc = tiLeNangCap[levelTrangBi]; // Truy cập giá trị từ mảng
                     }
                     if (mrRenee != null && isItemThanLinh != null && isItemSKH != null) {
                         String npcSay = "Vật phẩm SKH được nâng cấp: " + isItemSKH.getName() + "\n";
-                        npcSay += "\n|1|Sau khi nâng cấp SKH sẽ được tăng 10% chỉ số kích hoạt\n";
-                        npcSay += "\n|2|Tỷ lệ thành công: 50%";
+                        npcSay += "\n|1|Sau khi nâng cấp SKH sẽ được tăng 25% chỉ số kích hoạt\n";
+                        npcSay += "\n|2|Tỷ lệ thành công: " + tlnc + "%";
                         npcSay += "\n|2|Cần " + Util.numberToMoney(goldCombie) + " vàng";
                         npcSay += "\n|7|Thất bại sẽ mất đồ Huỷ Diệt và 2 tỷ vàng";
 
@@ -2568,15 +2573,26 @@ public class CombineServiceNew {
                 }
             }
             //Start Combie//
+            int[] tiLeNangCap = {100, 75, 50, 25, 10, 5, 1}; // Lưu trữ tỷ lệ nâng cấp
+            int tlnc = 0;
+            if (levelTrangBi >= 1 && levelTrangBi <= 7) {
+                tlnc = tiLeNangCap[levelTrangBi]; // Truy cập giá trị từ mảng
+            }
+
             if (SKH != null && doThan != null && mrRenee != null) {
                 if (player.inventory.gold >= player.combineNew.goldCombine) {
-                    if (Util.isTrue(40, 100)) {
+                    if (Util.isTrue(tlnc, 100)) {
                         for (int i = 1; i < SKH.itemOptions.size(); i++) {
+                            if (levelTrangBi < 2 && SKH.itemOptions.get(i).optionTemplate.id >= 136 && SKH.itemOptions.get(i).optionTemplate.id <= 144) {
+                                SKH.itemOptions.get(i).param += 24;
+//                                System.out.println("Giá trị của param tăng ở i = " + i);
+                                break;
+                            } else if (levelTrangBi > 1 && SKH.itemOptions.get(i).optionTemplate.id >= 136 && SKH.itemOptions.get(i).optionTemplate.id <= 144) {
+//                                System.out.println("Giá trị của level tăng ở i = " + i);
+                                SKH.itemOptions.get(i).param += 25;
+                            }
                             if (SKH.itemOptions.get(i).optionTemplate.id >= 127 && SKH.itemOptions.get(i).optionTemplate.id <= 135) {
                                 SKH.itemOptions.get(i).param += 1;
-                            }
-                            if (SKH.itemOptions.get(i).optionTemplate.id >= 136 && SKH.itemOptions.get(i).optionTemplate.id <= 144) {
-                                SKH.itemOptions.get(i).param += 5;
                             }
                         }
                         InventoryService.gI().subQuantityItemsBag(player, doThan, 1);
