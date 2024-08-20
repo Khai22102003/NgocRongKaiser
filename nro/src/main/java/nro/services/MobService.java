@@ -1,25 +1,25 @@
 package nro.services;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import nro.consts.ConstItem;
 import nro.consts.ConstMob;
 import nro.consts.ConstTask;
 import nro.models.boss.BossFactory;
 import nro.models.clan.Clan;
 import nro.models.clan.ClanMember;
 import nro.models.map.ItemMap;
+import nro.models.map.Zone;
 import nro.models.mob.Mob;
+import nro.models.mob.MobFactory;
+import nro.models.mob.MobTemplate;
 import nro.models.player.Pet;
 import nro.models.player.Player;
+import nro.server.Manager;
 import nro.server.io.Message;
 import nro.utils.Log;
 import nro.utils.Util;
-
-import java.util.ArrayList;
-import java.util.List;
-import nro.consts.ConstItem;
-import nro.models.map.Zone;
-import nro.models.mob.MobFactory;
-import nro.models.mob.MobTemplate;
-import nro.server.Manager;
 
 /**
  *
@@ -284,7 +284,7 @@ public class MobService {
                 break;
             case ConstMob.THAN_LAN_ME:
                 if (TaskService.gI().getIdTask(player) == ConstTask.TASK_8_1) {
-                    if (Util.isTrue(1, 3)) {
+                    if (Util.isTrue(1, 5)) {
                         itemMap = new ItemMap(mob.zone, ConstItem.NGOC_RONG_7_SAO, 1, mob.location.x, mob.location.y, player.id);
                     } else {
                         Service.getInstance().sendThongBao(player, "Con thằn lằn mẹ này không giữ ngọc, hãy tìm con thằn lằn mẹ khác");
@@ -292,27 +292,27 @@ public class MobService {
                 }
             case ConstMob.OC_MUON_HON:
                 if (TaskService.gI().getIdTask(player) == ConstTask.TASK_14_1) {
-//                    if (Util.isTrue(1, 3)) {
+                   if (Util.isTrue(1, 8)) {
                     itemMap = new ItemMap(mob.zone, ConstItem.TRUYEN_TRANH, 1, mob.location.x, mob.location.y, player.id);
-//                    } else {
-//                        Service.getInstance().sendThongBao(player, "Con ốc mượn hồn này không giữ truyện tranh, hãy thử tìm con ốc mượn hồn khác");
-//                    }
+                   } else {
+                       Service.getInstance().sendThongBao(player, "Con ốc mượn hồn này không giữ truyện tranh, hãy thử tìm con ốc mượn hồn khác");
+                   }
                 }
             case ConstMob.HEO_XAYDA_ME:
                 if (TaskService.gI().getIdTask(player) == ConstTask.TASK_14_1) {
-//                    if (Util.isTrue(1, 3)) {
+                   if (Util.isTrue(1, 8)) {
                     itemMap = new ItemMap(mob.zone, ConstItem.TRUYEN_TRANH, 1, mob.location.x, mob.location.y, player.id);
-//                    } else {
-//                        Service.getInstance().sendThongBao(player, "Con heo xayda mẹ này không giữ truyện tranh, hãy thử tìm con heo xayda mẹ khác");
-//                    }
+                   } else {
+                       Service.getInstance().sendThongBao(player, "Con heo xayda mẹ này không giữ truyện tranh, hãy thử tìm con heo xayda mẹ khác");
+                   }
                 }
             case ConstMob.OC_SEN:
                 if (TaskService.gI().getIdTask(player) == ConstTask.TASK_14_1) {
-//                    if (Util.isTrue(1, 3)) {
+                   if (Util.isTrue(1, 8)) {
                     itemMap = new ItemMap(mob.zone, ConstItem.TRUYEN_TRANH, 1, mob.location.x, mob.location.y, player.id);
-//                    } else {
-//                        Service.getInstance().sendThongBao(player, "Con ốc xên này không giữ truyện tranh, hãy thử tìm con ốc xên khác");
-//                    }
+                   } else {
+                       Service.getInstance().sendThongBao(player, "Con ốc xên này không giữ truyện tranh, hãy thử tìm con ốc xên khác");
+                   }
                 }
         }
         if (itemMap != null) {
