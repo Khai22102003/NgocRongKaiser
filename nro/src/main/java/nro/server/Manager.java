@@ -265,19 +265,37 @@ public class Manager {
                         mapTemp.zones, mapTemp.isMapOffline(),
                         mapTemp.maxPlayerPerZone, mapTemp.wayPoints, mapTemp.effectMaps);
             }
-            if (map != null) {
-                MAPS.add(map);
-                map.initMob(mapTemp.mobTemp, mapTemp.mobLevel, mapTemp.mobHp, mapTemp.mobX, mapTemp.mobY);
-                map.initNpc(mapTemp.npcId, mapTemp.npcX, mapTemp.npcY, mapTemp.npcAvatar);
-                new Thread(map, "Update map " + map.mapName).start();
-            }
+            //   if (map != null) {
+            MAPS.add(map);
+            map.initMob(mapTemp.mobTemp, mapTemp.mobLevel, mapTemp.mobHp, mapTemp.mobX, mapTemp.mobY);
+            map.initNpc(mapTemp.npcId, mapTemp.npcX, mapTemp.npcY, mapTemp.npcAvatar);
+            //    new Thread(map, "Update map " + map.mapName).start();
+            //   }
 
-        
-        
-
-       // Log.success("Init map thành công!");
-    }
+            // Log.success("Init map thành công!");
         }
+        new Thread(() -> {
+            try {
+                while (!Maintenance.isRuning) {
+                    long st = System.currentTimeMillis();
+                    for (nro.models.map.Map map : MAPS) {
+                        for (Zone zone : map.zones) {
+                            try {
+                                zone.update();
+                            } catch (Exception e) {
+                            }
+                        }
+                    }
+                    long timeDo = System.currentTimeMillis() - st;
+                    if (1000 - timeDo > 0) {
+                        Thread.sleep(1000 - timeDo);
+                    }
+                }
+            } catch (Exception e) {
+            }
+        }, "Update maps").start();
+    }
+
     private void loadDatabase() {
         long st = System.currentTimeMillis();
         JSONValue jv = new JSONValue();
@@ -285,7 +303,7 @@ public class Manager {
         JSONObject dataObject = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
-        try ( Connection con = DBService.gI().getConnectionForGame();) {
+        try (Connection con = DBService.gI().getConnectionForGame();) {
             //load part
             PartManager.getInstance().load();
 
@@ -391,7 +409,7 @@ public class Manager {
                 Log.success("Load map template thành công (" + MAP_TEMPLATES.length + ")");
             }
 
-           //load skill
+            //load skill
             ps = con.prepareStatement("select * from skill_template order by nclass_id, slot");
             rs = ps.executeQuery();
             byte nClassId = -1;
@@ -435,7 +453,7 @@ public class Manager {
                     skill.price = Short.parseShort(String.valueOf(dts.get("price")));
                     skill.moreInfo = String.valueOf(dts.get("info"));
                     skillTemplate.skillss.add(skill);
-                    
+
                 }
             }
             rs.close();
